@@ -12,6 +12,7 @@ import Header from './components/Header';
 import SideMenu from 'react-native-side-menu';
 import Menu from './components/Menu';
 import RecipeList from './components/RecipeList'
+import ActionButton from 'react-native-action-button';
 
 const styles = StyleSheet.create({
   container:{
@@ -49,6 +50,7 @@ export default class App extends Component<Props> {
       <View style={[{flex:1}, styles.container]}>
       <Header toggle={this.toggle.bind(this)}/>
       <RecipeList />
+      <ActionButton buttonColor="rgba(231,76,60,1)" />
       </View>
       </SideMenu> 
     )

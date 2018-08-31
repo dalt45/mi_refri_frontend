@@ -3,6 +3,8 @@ import {
   Dimensions, StyleSheet, View, Text, Image, ScrollView, 
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import RecipeListComponent from '../components/RecipeListComponent'
+
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
@@ -20,9 +22,7 @@ class RecipeList extends Component {
 
   render() {
     return (
-      <View style={styles.wholeList}>
-          <Text>Aqui va la lista de recetas</Text>
-      </View>
+      <RecipeListComponent />
     );
   }
 }
