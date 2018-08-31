@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
   Dimensions, StyleSheet, View, Text, Image, ScrollView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import RecipeListComponent from './RecipeListComponent';
+import IngredientSingle from './IngredientSingle';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,12 +14,12 @@ const styles = StyleSheet.create({
   },
 });
 
-class RecipeList extends Component {
+class IngredientList extends Component {
   render() {
     return (
-      <RecipeListComponent />
+      <IngredientSingle />
     );
   }
 }
 
-export default RecipeList;
+export default IngredientList;

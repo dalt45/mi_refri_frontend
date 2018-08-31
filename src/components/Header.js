@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#00BDCB',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.9,
+    elevation: 2,
+    shadowColor: 'black',
   },
   logo: {
     height: 40,

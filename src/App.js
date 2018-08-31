@@ -1,59 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from 'react';
+import { Router, Scene } from 'react-native-router-flux';
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import Header from './components/Header';
-import SideMenu from 'react-native-side-menu';
-import Menu from './components/Menu';
-import RecipeList from './components/RecipeList'
-import ActionButton from 'react-native-action-button';
+import Home from './Home';
+import Ingredients from './components/Ingredients';
+import AddIngredients from './components/AddIngredients';
 
-const styles = StyleSheet.create({
-  container:{
-    backgroundColor:'white',
-
-  }
-})
-type Props = {};
-export default class App extends Component<Props> {
-
- constructor(props){
-   super(props)
-   this.state = {
-     isOpen: false
-   }
- }
-  
-  toggle(){
-    this.setState({
-      isOpen:!this.state.isOpen
-    })
-  }
-
-  updateMenu(isOpen){
-    this.setState({isOpen})
-  }
-
+export default class App extends Component {
   render() {
     return (
-      <SideMenu
-      menu={<Menu />}
-      isOpen={this.state.isOpen}
-      onChange={(isOpen) => this.updateMenu(isOpen)}
-      >
-      <View style={[{flex:1}, styles.container]}>
-      <Header toggle={this.toggle.bind(this)}/>
-      <RecipeList />
-      <ActionButton buttonColor="rgba(231,76,60,1)" />
-      </View>
-      </SideMenu> 
-    )
+
+      <Router>
+        <Scene key="root">
+          <Scene key="recipes" component={Home} initial hideNavBar />
+          <Scene key="ingredients" component={Ingredients} hideNavBar />
+          <Scene key="addIngredients" component={AddIngredients} />
+        </Scene>
+      </Router>
+    );
   }
 }
-
