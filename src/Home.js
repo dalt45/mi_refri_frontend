@@ -28,6 +28,7 @@ class Home extends Component {
     super(props);
     this.state = {
       isOpen: false,
+      recipes: "",
     };
   }
 
@@ -41,6 +42,16 @@ class Home extends Component {
     this.setState({ isOpen });
   }
 
+  /*handleRecipes = () => {
+    const url = "";
+    axios.post(url, {["jitomate","lechuga"]}).then((response) => {
+        console.log(response);
+        this.setState({recipes: response})
+    }).catch((error) => {
+        console.log(error);
+    })
+    }
+*/
   render() {
     return (
       <SideMenu

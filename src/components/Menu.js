@@ -56,17 +56,25 @@ const styles = StyleSheet.create({
 
 
 class Menu extends Component {
+
   constructor(props) {
     super(props);
     this.state={
       isOnRecipes:true,
     }
   }
-  handleRecipesShow(){
+
+  handleRecipesShow = () => {
     this.setState({
       isOnRecipes: false,
     });
     return this.state.isOnRecipes
+  }
+
+  fun = () => {
+    this.handleRecipesShow();
+    console.log(this.state);
+    this.props.toggle();
   }
 
   render() {
@@ -79,11 +87,7 @@ class Menu extends Component {
           <View style={styles.textWithIcon}>
             <View style={styles.withIcon}>
               <Icon style={styles.iconWithText} name="apple" color="black" size={28} />
-              <TouchableWithoutFeedback onPress={() => {
-                this.handleRecipesShow();
-                console.log(this.state);
-                this.props.toggle();
-              }}>
+              <TouchableWithoutFeedback onPress={this.fun}>
                 <View>
                   <Text style={styles.text}> Recetas</Text>
                 </View>
